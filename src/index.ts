@@ -54,7 +54,7 @@ const main = async () => {
         }),
     });
 
-    apolloServer.applyMiddleware({ app })
+    apolloServer.applyMiddleware({ app, cors: { origin: "http://localhost:3000/"} })
 
     app.get('/', (_, res) => {
         res.send("Hello!")
