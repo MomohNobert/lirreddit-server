@@ -2,6 +2,7 @@ import { Resolver, Mutation, InputType, Field, Arg, Ctx, ObjectType, Query } fro
 import argon2 from 'argon2';
 import { MyContext } from 'src/types';
 import { User } from '../entities/User';
+import { EntityManager } from '@mikro-orm/postgresql'
 
 @InputType()
 class UsernamePasswordInput {
