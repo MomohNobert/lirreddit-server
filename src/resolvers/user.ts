@@ -2,7 +2,7 @@ import { Resolver, Mutation, InputType, Field, Arg, Ctx, ObjectType, Query } fro
 import argon2 from 'argon2';
 import { MyContext } from 'src/types';
 import { User } from '../entities/User';
-import { COOKIE_NAME } from 'src/constants';
+import { COOKIE_NAME } from '../constants';
 
 @InputType()
 class UsernamePasswordInput {
