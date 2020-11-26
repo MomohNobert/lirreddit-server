@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-export async function sendEmail(to: string, text: string) {
+export async function sendEmail(to: string, html: string) {
   let testAccount = await nodemailer.createTestAccount();
   console.log('testAccount', testAccount)
 
@@ -9,8 +9,8 @@ export async function sendEmail(to: string, text: string) {
     port: 587,
     secure: false,
     auth: {
-      user: testAccount.user,
-      pass: testAccount.pass,
+      user: 'sjgmtvbpl4cmzteh@ethereal.email',
+      pass: 'BnDD8ZEWtn5UAr5h8V',
     },
   });
 
@@ -19,7 +19,7 @@ export async function sendEmail(to: string, text: string) {
     from: '"Fred Foo 👻" <foo@example.com>',
     to,
     subject: "Change password",
-    text,
+    html,
   });
 
   console.log("Message sent: %s", info.messageId);

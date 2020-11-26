@@ -16,7 +16,7 @@ import { sendEmail } from "./utils/sendEmail";
 
 
 const main = async () => {
-    sendEmail("nomomoh@gmail.com", "Hey, What's up, Hello!")
+    sendEmail("nomomoh@gmail.com", "Hey, What's up, Hello!");
     const orm = await MikroORM.init(mikroConfig);
     await orm.getMigrator().up();
 
