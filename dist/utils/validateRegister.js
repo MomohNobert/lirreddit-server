@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateRegister = void 0;
 exports.validateRegister = (options) => {
-    if (options.email.includes('@')) {
+    if (!options.email.includes('@')) {
         return [{
                 field: 'email',
                 message: 'invalid email'
