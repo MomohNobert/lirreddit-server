@@ -10,35 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Post = void 0;
-const Entity_1 = require("@mikro-orm/core/decorators/Entity");
-const PrimaryKey_1 = require("@mikro-orm/core/decorators/PrimaryKey");
-const Property_1 = require("@mikro-orm/core/decorators/Property");
 const type_graphql_1 = require("type-graphql");
 const ObjectType_1 = require("type-graphql/dist/decorators/ObjectType");
-let Post = class Post {
+const typeorm_1 = require("typeorm");
+const Entity_1 = require("typeorm/decorator/entity/Entity");
+let Post = class Post extends typeorm_1.BaseEntity {
     constructor() {
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+        super(...arguments);
+        this.createdAt = Date;
+        this.updatedAt = Date;
     }
 };
 __decorate([
     type_graphql_1.Field(() => type_graphql_1.Int),
-    PrimaryKey_1.PrimaryKey(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Post.prototype, "id", void 0);
 __decorate([
     type_graphql_1.Field(() => String),
-    Property_1.Property({ type: 'date' }),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Object)
 ], Post.prototype, "createdAt", void 0);
 __decorate([
     type_graphql_1.Field(() => String),
-    Property_1.Property({ type: 'date', onUpdate: () => new Date() }),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Object)
 ], Post.prototype, "updatedAt", void 0);
 __decorate([
     type_graphql_1.Field(),
-    Property_1.Property({ type: 'text' }),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Post.prototype, "title", void 0);
 Post = __decorate([
