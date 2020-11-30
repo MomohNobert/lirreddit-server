@@ -59,7 +59,7 @@ export class UserResolver {
             return  { errors : [
                 {
                     field: 'token',
-                    message: 'user not longer exists'
+                    message: 'user no longer exists'
                 }
             ]}         
         }
