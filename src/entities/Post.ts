@@ -17,12 +17,19 @@ export class Post extends BaseEntity {
 
     @Field()
     @Column()
+    text!: string;
+
+    @Field()
+    @Column({ type: 'int', default: 0 })
+    points!: number;
+
+    @Field()
+    @Column()
     creatorId: number;
 
     @ManyToOne(() => User, user => user.posts)
     creator: User;
-    
-    
+
     @Field(() => String)
     @CreateDateColumn()
     createdAt = Date;

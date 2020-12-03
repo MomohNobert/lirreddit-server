@@ -35,6 +35,16 @@ __decorate([
 __decorate([
     type_graphql_1.Field(),
     typeorm_1.Column(),
+    __metadata("design:type", String)
+], Post.prototype, "text", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    typeorm_1.Column({ type: 'int', default: 0 }),
+    __metadata("design:type", Number)
+], Post.prototype, "points", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Post.prototype, "creatorId", void 0);
 __decorate([
