@@ -139,8 +139,6 @@ export class UserResolver {
             .execute();
           user = result.raw[0];
         } catch (err) {
-          //|| err.detail.includes("already exists")) {
-          // duplicate username error
           if (err.code === "23505") {
             return {
               errors: [
